@@ -36,5 +36,44 @@ public class GewinnLayout extends JPanel {
 
         spielerZahlFeld.setFont(new Font("Arial", Font.BOLD, 50));
         computerZahlFeld.setFont(new Font("Arial", Font.BOLD, 50));
+
+        rundenergebnisLabel.setFont(new Font("Arial", Font.BOLD, 30));
+        gesamtpunkteLabel.setFont(new Font("Arial", Font.BOLD, 30));
+
+        rundenergebnisLabel.setOpaque(true);
+        gesamtpunkteLabel.setOpaque(true);
+
+        nochMalBtn = new JButton("Noch einmal!");
+        nochMalBtn.setEnabled(false);
+
+        mitte.add(spielerZahlFeld);
+        mitte.add(computerZahlFeld);
+
+        add(oben, BorderLayout.NORTH);
+        add(mitte, BorderLayout.CENTER);
+        add(nochMalBtn, BorderLayout.SOUTH);
+
+        spielerZahlFeld.addActionListener(controller::action);
+        nochMalBtn.addActionListener(controller::action);
+    }
+
+    public JTextField getSpielerZahlFeld() {
+        return spielerZahlFeld;
+    }
+
+    public JTextField getComputerZahlFeld() {
+        return computerZahlFeld;
+    }
+
+    public JLabel getRundenergebnisLabel() {
+        return rundenergebnisLabel;
+    }
+
+    public JLabel getGesamtpunkteLabel() {
+        return gesamtpunkteLabel;
+    }
+
+    public JButton getNochMalBtn() {
+        return nochMalBtn;
     }
 }
