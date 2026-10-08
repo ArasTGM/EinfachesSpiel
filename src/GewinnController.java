@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 
-public class GewinnController implements ActionListener {
+public class GewinnController {
 
     private GewinnView view;
     private GewinnModel model;
@@ -11,7 +11,7 @@ public class GewinnController implements ActionListener {
         view = new GewinnView(this);
     }
 
-    public void actionPerformed(ActionEvent e) {
+    public void action(ActionEvent e) {
         GewinnLayout layout = view.getGewinnLayout();
 
         if (e.getSource() == layout.getSpielerZahlFeld()) {
@@ -51,6 +51,15 @@ public class GewinnController implements ActionListener {
             } catch (NumberFormatException ex) {
                 layout.getSpielerZahlFeld().setText("");
             }
+        }
+
+        if (e.getSource() == layout.getNochMalBtn()) {
+            layout.getSpielerZahlFeld().setText("");
+            layout.getComputerZahlFeld().setText("");
+            layout.getRundenergebnisLabel().setText("");
+
+            layout.getRundenergebnisLabel().setBackground(Color.WHITE);
+            layout.getGesamtpunkteLabel().setBackground(Color.WHITE);
         }
     }
 }
