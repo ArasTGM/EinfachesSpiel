@@ -57,6 +57,8 @@ public class GewinnController {
             layout.getSpielerZahlFeld().setText("");
             layout.getComputerZahlFeld().setText("");
             layout.getRundenergebnisLabel().setText("");
+            layout.getSpielerZahlFeld().setEditable(true);
+            layout.getNochMalBtn().setEnabled(false);
 
             layout.getRundenergebnisLabel().setBackground(Color.WHITE);
             layout.getGesamtpunkteLabel().setBackground(Color.WHITE);
