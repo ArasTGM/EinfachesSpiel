@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.awt.event.*;
 
 public class GewinnController {
@@ -37,17 +36,6 @@ public class GewinnController {
 
                 layout.getGesamtpunkteLabel().setText("" + model.getGesamtPunkte());
 
-                layout.getSpielerZahlFeld().setEditable(false);
-                layout.getNochMalBtn().setEnabled(true);
-
-                if (ergebnis > 0) {
-                    layout.getRundenergebnisLabel().setBackground(Color.GREEN);
-                    layout.getGesamtpunkteLabel().setBackground(Color.GREEN);
-                } else {
-                    layout.getRundenergebnisLabel().setBackground(Color.RED);
-                    layout.getGesamtpunkteLabel().setBackground(Color.RED);
-                }
-
             } catch (NumberFormatException ex) {
                 layout.getSpielerZahlFeld().setText("");
             }
@@ -56,12 +44,7 @@ public class GewinnController {
         if (e.getSource() == layout.getNochMalBtn()) {
             layout.getSpielerZahlFeld().setText("");
             layout.getComputerZahlFeld().setText("");
-            layout.getRundenergebnisLabel().setText("");
-            layout.getSpielerZahlFeld().setEditable(true);
-            layout.getNochMalBtn().setEnabled(false);
-
-            layout.getRundenergebnisLabel().setBackground(Color.WHITE);
-            layout.getGesamtpunkteLabel().setBackground(Color.WHITE);
+            layout.getRundenergebnisLabel().setText("Tippe eine Zahl von 1 bis 9");
         }
     }
 }

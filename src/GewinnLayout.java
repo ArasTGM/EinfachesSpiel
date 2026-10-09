@@ -40,11 +40,7 @@ public class GewinnLayout extends JPanel {
         rundenergebnisLabel.setFont(new Font("Arial", Font.BOLD, 30));
         gesamtpunkteLabel.setFont(new Font("Arial", Font.BOLD, 30));
 
-        rundenergebnisLabel.setOpaque(true);
-        gesamtpunkteLabel.setOpaque(true);
-
         nochMalBtn = new JButton("Noch einmal!");
-        nochMalBtn.setEnabled(false);
 
         mitte.add(spielerZahlFeld);
         mitte.add(computerZahlFeld);
