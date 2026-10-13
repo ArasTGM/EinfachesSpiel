@@ -33,8 +33,6 @@ public class GewinnLayout extends JPanel {
         spielerZahlFeld = new JTextField();
         computerZahlFeld = new JTextField();
         computerZahlFeld.setEditable(false);
-
-        // Weißer Hintergrund für die beiden oberen Labels (laut Angabe)
         rundenergebnisLabel.setOpaque(true);
         rundenergebnisLabel.setBackground(Color.WHITE);
 
@@ -50,8 +48,8 @@ public class GewinnLayout extends JPanel {
         add(mitte, BorderLayout.CENTER);
         add(nochMalBtn, BorderLayout.SOUTH);
 
-        spielerZahlFeld.addActionListener(controller::action);
-        nochMalBtn.addActionListener(controller::action);
+        spielerZahlFeld.addActionListener(controller::action); // Methoden als Listener...kennzeichnen
+        nochMalBtn.addActionListener(controller::action);// -^
     }
 
     public JTextField getSpielerZahlFeld() {

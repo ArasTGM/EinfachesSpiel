@@ -6,7 +6,6 @@ public class GewinnModel {
     public GewinnModel() {
         this.gesamtPunkte = 30;
     }
-
     public int getGesamtPunkte() {
         return this.gesamtPunkte;
     }
@@ -19,7 +18,7 @@ public class GewinnModel {
 
     public void berechneRunde(int spielerZahl){
         this.spielerZahl = spielerZahl;
-        this.computerZahl = (int) (Math.random() * 9) + 1;
+        this.computerZahl = (int) (Math.random() * 9) + 1;// eine zufällige Zahl von 1 bis 9 (obwohl es gar nicht wirklich zufällig ist, der algorithmus hängt von dem Start(30) und viel mehr ab(soweit ich weiß))
         if (spielerZahl > computerZahl) {
             this.rundenErgebnis = 20;
         } else if (spielerZahl == computerZahl) {

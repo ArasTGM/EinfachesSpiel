@@ -13,15 +13,13 @@ public class GewinnController {
 
     public void action(ActionEvent e) {
         GewinnLayout layout = view.getGewinnLayout();
-
-        if (e.getSource() == layout.getSpielerZahlFeld()) {
+        if (e.getSource() == layout.getSpielerZahlFeld()) {//wenn man enter drückt...
             try {
                 int spielerZahl = Integer.parseInt(layout.getSpielerZahlFeld().getText());
                 if (spielerZahl < 1 || spielerZahl > 9) {
                     layout.getSpielerZahlFeld().setText("");
                     return;
                 }
-
                 model.berechneRunde(spielerZahl);
                 layout.getComputerZahlFeld().setText(String.valueOf(model.getComputerZahl()));
                 int ergebnis = model.getRundenErgebnis();
@@ -33,7 +31,7 @@ public class GewinnController {
                 layout.getGesamtpunkteLabel().setText(String.valueOf(model.getGesamtPunkte()));
                 layout.getSpielerZahlFeld().setEditable(false);
                 layout.getNochMalBtn().setEnabled(true);
-                if (model.hatGewonnen()) {
+                if (model.hatGewonnen()) { // Prüft ob das Spiel gewonnen oder verloren hat
                     JOptionPane.showMessageDialog(view, "Gewonnen! 100+ Punkte erreicht.");
                     layout.getSpielerZahlFeld().setEnabled(false);
                 } else if (model.hatVerloren()) {
@@ -44,7 +42,7 @@ public class GewinnController {
                 layout.getSpielerZahlFeld().setText("");
             }
         }
-        if (e.getSource() == layout.getNochMalBtn()) {
+        if (e.getSource() == layout.getNochMalBtn()) {//ein reset halt
             layout.getSpielerZahlFeld().setText("");
             layout.getComputerZahlFeld().setText("");
             layout.getRundenergebnisLabel().setText("");

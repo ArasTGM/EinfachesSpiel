@@ -2,7 +2,6 @@ import javax.swing.*;
 
 public class GewinnView extends JFrame {
     private GewinnLayout gewinnLayout;
-
     public GewinnView(GewinnController controller) {
         setTitle("Zahlen-Gewinnspiel");
         setSize(500, 300);
@@ -11,7 +10,6 @@ public class GewinnView extends JFrame {
         add(gewinnLayout);
         setVisible(true);
     }
-
     public GewinnLayout getGewinnLayout() {
         return gewinnLayout;
     }
