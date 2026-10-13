@@ -43,6 +43,7 @@ public class GewinnController {
             } catch (NumberFormatException ex) {
                 layout.getSpielerZahlFeld().setText("");
             }
+        }
         if (e.getSource() == layout.getNochMalBtn()) {
             layout.getSpielerZahlFeld().setText("");
             layout.getComputerZahlFeld().setText("");
