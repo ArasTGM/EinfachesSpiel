@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.event.*;
+import java.awt.*;
 
 public class GewinnController {
 
@@ -25,7 +26,11 @@ public class GewinnController {
                 int ergebnis = model.getRundenErgebnis();
                 if (ergebnis > 0) {
                     layout.getRundenergebnisLabel().setText("+" + ergebnis);
+                    layout.getRundenergebnisLabel().setBackground(Color.GREEN);
+                    layout.getGesamtpunkteLabel().setBackground(Color.GREEN);
                 } else {
+                    layout.getRundenergebnisLabel().setBackground(Color.RED);
+                    layout.getGesamtpunkteLabel().setBackground(Color.RED);
                     layout.getRundenergebnisLabel().setText(String.valueOf(ergebnis));
                 }
                 layout.getGesamtpunkteLabel().setText(String.valueOf(model.getGesamtPunkte()));
@@ -44,6 +49,8 @@ public class GewinnController {
             layout.getSpielerZahlFeld().setText("");
             layout.getComputerZahlFeld().setText("");
             layout.getRundenergebnisLabel().setText("");
+            layout.getRundenergebnisLabel().setBackground(Color.WHITE);
+            layout.getGesamtpunkteLabel().setBackground(Color.WHITE);
         }
     }
 }
