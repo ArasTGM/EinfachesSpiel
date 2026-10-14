@@ -29,8 +29,6 @@ public class GewinnController {
                     layout.getRundenergebnisLabel().setText(String.valueOf(ergebnis));
                 }
                 layout.getGesamtpunkteLabel().setText(String.valueOf(model.getGesamtPunkte()));
-                layout.getSpielerZahlFeld().setEditable(false);
-                layout.getNochMalBtn().setEnabled(true);
                 if (model.hatGewonnen()) { // Prüft ob das Spiel gewonnen oder verloren hat
                     JOptionPane.showMessageDialog(view, "Gewonnen! 100+ Punkte erreicht.");
                     layout.getSpielerZahlFeld().setEnabled(false);
@@ -46,8 +44,6 @@ public class GewinnController {
             layout.getSpielerZahlFeld().setText("");
             layout.getComputerZahlFeld().setText("");
             layout.getRundenergebnisLabel().setText("");
-            layout.getSpielerZahlFeld().setEditable(true);
-            layout.getNochMalBtn().setEnabled(false);
         }
     }
 }
